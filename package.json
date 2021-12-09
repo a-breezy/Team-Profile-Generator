@@ -1,0 +1,26 @@
+{
+  "name": "10.team-profile-generator",
+  "version": "1.0.0",
+  "description": "An HTML generator for team members to incude name, ID, and contact info.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-breezy/Team-Profile-Generator.git"
+  },
+  "author": "a-breezy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a-breezy/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/a-breezy/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.3"
+  }
+}
