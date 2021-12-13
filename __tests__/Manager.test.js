@@ -1,12 +1,17 @@
-const Engineer = require('./lib/Engineer.js')
+const Manager = require("../lib/Manager.js");
 
-test("Creates engineer object", () => {
-    const engineer = new Engineer(name, github, role)
+test("Creates manager object", () => {
+	const manager = new Manager(
+		"mark",
+		"1234",
+		"mark@here.com",
+		"room 404",
+		"manager"
+	);
 
-    expect(engineer.name) = name;
-    expect(engineer.id) = id;
-    expect(engineer.email) = email;
-    expect(engineer.github) = github;
-    expect(engineer.role) = role;
-})
-
+	expect(manager.name).toBe("mark");
+	expect(manager.id).toBe("1234");
+	expect(manager.email).toBe("mark@here.com");
+	expect(manager.officeNumber).toBe("room 404");
+	expect(manager.role).toBe("manager");
+});
