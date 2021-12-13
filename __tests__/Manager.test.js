@@ -1,7 +1,7 @@
-const Manager = require('./lib/Manager.js')
+const Engineer = require('./lib/Engineer.js')
 
 test("Creates engineer object", () => {
-    const manager = new Manager(name, github, role)
+    const engineer = new Engineer(name, github, role)
 
     expect(engineer.name) = name;
     expect(engineer.id) = id;
