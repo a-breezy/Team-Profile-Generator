@@ -3,7 +3,7 @@ const generateHtml = require("./src/generateHtml.js");
 const fs = require("fs");
 const path = require("path");
 
-const Employee = require("./lib/Employee.js");
+// const Employee = require("./lib/Employee.js");
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
@@ -116,6 +116,13 @@ const newEmployee = () => {
 				},
 			},
 			{
+				type: "list",
+				name: "employee",
+				message: "Are you an intern or an engineer?",
+				when: check => check.addEmployee === true,
+				choices: ["Intern", "Engineer"],
+			},
+			{
 				type: "input",
 				name: "id",
 				message: "What is your ID?",
@@ -128,13 +135,6 @@ const newEmployee = () => {
 						return false;
 					}
 				},
-			},
-			{
-				type: "list",
-				name: "employee",
-				message: "Are you an intern or an engineer?",
-				when: check => check.addEmployee === true,
-				choices: ["Intern", "Engineer"],
 			},
 			{
 				type: "input",
@@ -175,7 +175,6 @@ const newEmployee = () => {
 						answer.school
 					);
 					teamMember.push(intern);
-					console.log(teamMember);
 				} else if (answer.employee === "Engineer") {
 					const engineer = new Engineer(
 						answer.name,
@@ -184,10 +183,12 @@ const newEmployee = () => {
 						answer.github
 					);
 					teamMember.push(engineer);
-					console.log(teamMember);
 				}
 				return newEmployee();
 			}
 		});
 };
-createManager().then(newEmployee).then(generateHtml(teamMember));
+
+createManager()
+	.then(newEmployee)
+	.then(viewHtml => console.log(generateHtml(teamMember)));
