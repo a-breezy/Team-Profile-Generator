@@ -189,6 +189,23 @@ const newEmployee = () => {
 		});
 };
 
+const writeToFile = fileContent => {
+	return new Promise((resolve, reject) => {
+		fs.writeFile("./dist/teamProfile.html", fileContent, err => {
+			if (err) {
+				reject(err);
+				return;
+			}
+			resolve({
+				ok: true,
+				message: "Team Profile Generated",
+			});
+		});
+	});
+};
+
 createManager()
 	.then(newEmployee)
-	.then(viewHtml => console.log(generateHtml(teamMember)));
+	.then(() => writeToFile(generateHtml(teamMember)))
+	.then(results => console.log(results))
+	.catch(err => console.log(err));
