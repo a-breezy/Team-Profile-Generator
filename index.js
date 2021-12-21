@@ -191,7 +191,7 @@ const newEmployee = () => {
 
 const writeToFile = fileContent => {
 	return new Promise((resolve, reject) => {
-		fs.writeFile("./dist/teamProfile.html", fileContent, err => {
+		fs.writeFile("./dist/index.html", fileContent, err => {
 			if (err) {
 				reject(err);
 				return;
