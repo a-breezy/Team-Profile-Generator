@@ -33,7 +33,7 @@ Once user is finished adding employees their html file will be generated in the 
 
 ![Usage 2](./img/screenShotIndex.png "Index Screen Shot")*Index of Team Profile Generator*
 
-
+[Link To Video Example](https://drive.google.com/file/d/18evc_D0ycuqiLp_3d_XTlrowYz6ujaH8/view)
 ---
 ## License
 
